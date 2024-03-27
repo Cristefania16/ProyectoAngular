@@ -67,6 +67,16 @@ export class PagListaVehiculosComponent implements OnInit {
     })
   }
 
+  consultaVehiculo(codigo:string) {
+    this.vehiculoService.getVehiculo(codigo).subscribe(respuesta => {
+      if (respuesta.codigo == '1') {
+        this.consultarVehiculo();
+         }
+      console.log(respuesta);
+      //this.listaVehiculos = respuesta;
+    })
+  }
+
 
   eliminar(codigo: string) {
     Swal.fire({

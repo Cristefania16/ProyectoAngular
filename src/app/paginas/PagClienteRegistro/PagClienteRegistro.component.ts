@@ -13,7 +13,7 @@ export class PagClienteRegistroComponent implements OnInit {
 
 
   formulario: FormGroup;
-  
+
 
   /*tituloPagina= "Registro del cliente";
   cliente= {
@@ -21,8 +21,8 @@ export class PagClienteRegistroComponent implements OnInit {
     password: "",
     telefono: "",
     email: ""
-  };
-quiereContacto:boolean=false;*/
+  };*/
+  quiereContacto: boolean = false;
 
   constructor(
     private readonly clienteService: ClienteService,
@@ -74,29 +74,29 @@ quiereContacto:boolean=false;*/
   registrar() {
 
     if (this.formulario.valid) {
-      this.clienteService.insertCliente({...this.formulario.value }).subscribe(respuesta => {
-          if (respuesta.codigo == '1') {
-            this._router.navigate(['/vehiculo']);
-            Swal.fire({
-              title: "Mensaje",
-              text: "Cliente registrado con exito",
-              icon: "success"
-            }).then(res => {
-              this.formulario.reset();
-            }
-            )
-  
-          } else {
-  
-            Swal.fire({
-              title: "Mensaje",
-              text: "No se pudo registrar el cliente:" + respuesta.mensaje,
-              icon: "error"
-            })
+      this.clienteService.insertCliente({ ...this.formulario.value }).subscribe(respuesta => {
+        if (respuesta.codigo == '1') {
+          this._router.navigate(['/vehiculos']);
+          Swal.fire({
+            title: "Mensaje",
+            text: "Cliente registrado con exito",
+            icon: "success"
+          }).then(res => {
+            this.formulario.reset();
           }
+          )
+
+        } else {
+
+          Swal.fire({
+            title: "Mensaje",
+            text: "No se pudo registrar el cliente:" + respuesta.mensaje,
+            icon: "error"
+          })
         }
+      }
       )
-  
+
     } else {
       Swal.fire({
         title: "Mensaje",
@@ -104,10 +104,10 @@ quiereContacto:boolean=false;*/
         icon: "error"
       })
     }
-  
+
   }
-  
-  
+
+
 
 
 }
