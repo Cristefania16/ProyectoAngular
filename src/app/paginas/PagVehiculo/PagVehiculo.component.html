@@ -1,0 +1,68 @@
+<div class="card">
+  <div class="card-header">
+    EDITAR VEHICULO
+     <!-- {{vehiculo?.marca}} {{vehiculo?.modelo}} -->
+  </div>
+  <div class="card-body">
+    <div class="row">
+
+
+      <div class="col-12">
+        <form [formGroup]="formulario">
+          <div class="mb-3">
+            <label for="staticCodigo" class="col-sm-2 col-form-label"> Código </label>
+            <input type="text" class="form-control" formControlName="codigo"  readonly="">
+
+          </div>
+
+
+          <div class="mb-3">
+            <label for="staticCodigo" class="col-sm-2 col-form-label"> Marca </label>
+            <input type="text" class="form-control" formControlName="marca">
+
+          </div>
+
+          <div class="mb-3">
+            <label for="staticCodigo" class="col-sm-2 col-form-label"> Modelo </label>
+            <input type="text" class="form-control" formControlName="modelo">
+
+          </div>
+
+          <div class="mb-3">
+            <label for="staticCodigo" class="col-sm-2 col-form-label"> Año </label>
+            <input type="text" class="form-control" formControlName="anio">
+
+          </div>
+
+                    <div class="mb-3">
+            <label for="staticCodigo" class="col-sm-2 col-form-label"> Kilometraje </label>
+            <input type="text" class="form-control" formControlName="kilometraje">
+
+          </div>
+
+          <div class="mb-3">
+            <label for="staticCodigo" class="col-sm-2 col-form-label"> Precio </label>
+            <input type="text" class="form-control" formControlName="precio">
+
+          </div>
+
+          <div class="mb-3">
+            <label for="staticCodigo" class="col-sm-2 col-form-label"> Calificación </label>
+            <input type="number" class="form-control" formControlName="calificacion">
+
+          </div>
+
+          <div class="row">
+            <div class="d-grid gap-2 col-4 mx-auto">
+              <button class="btn btn-info" (click)="guardar()">GUARDAR</button>
+            </div>
+      
+          </div>
+
+          <div class="card-footer">
+            <button class="btn btn-ouline-secondary" style="width: 110px;" (click)="onBack()">Regresar</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
